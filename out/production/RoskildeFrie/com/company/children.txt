@@ -26,5 +26,6 @@ Kasper;Long;7;Male;Vodkavej 24;15929929
 Jan;Green;8;Male;Rootbeervej 5;14929929
 Tobias;Song;9;Male;Heinikenvej 2;13929999
 Lars;Gong;10;Male;Carlsbergvej 1;39482010
-Torben;Jensen;9;Male;Rudersdalvej 19;77667766
 Elias;Karstensen;6;Male;Torbenvænget 38;20394850
+Niels;Magny;12;Male;Gotham Road 39;29292929
+Road;Map;10;Male;Road House 11;28384858

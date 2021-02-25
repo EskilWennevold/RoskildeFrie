@@ -32,24 +32,28 @@ public class FileHandler {
             System.out.println(fnfe + "Could not find file.");
         }
     }
-
     public static void saveChildren() throws FileNotFoundException{
         PrintStream output = new PrintStream(filePath);
-        for(Child kid : ChildHandler.children){
-            output.print(kid.firstName + ";");
-            output.print(kid.lastName + ";");
-            output.print(kid.age + ";");
-            output.print(kid.gender + ";");
-            output.print(kid.address + ";");
-            output.println(kid.phoneNumber);
-        }
-        for(Child kid : ChildHandler.waitingList){
-            output.print(kid.firstName + ";");
-            output.print(kid.lastName + ";");
-            output.print(kid.age + ";");
-            output.print(kid.gender + ";");
-            output.print(kid.address + ";");
-            output.println(kid.phoneNumber);
+        if(ChildHandler.children.size>0) {
+            ListNode currentNode=ChildHandler.children.first;
+            Child kid = currentNode.data;
+            while (currentNode.next != null) {
+                kid = currentNode.data;
+                writeChildrenData(kid, output);
+                currentNode = currentNode.next;
+            }
+            kid = currentNode.data;
+            writeChildrenData(kid, output);
+            if(ChildHandler.waitingList.size>0) {
+                currentNode = ChildHandler.waitingList.first;
+                while (currentNode.next != null) {
+                    kid = currentNode.data;
+                    writeChildrenData(kid, output);
+                    currentNode = currentNode.next;
+                }
+                kid = currentNode.data;
+                writeChildrenData(kid, output);
+            }
         }
     }
 }

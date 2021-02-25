@@ -39,7 +39,6 @@ public class Main {
             }
         }
     }
-
     public static void childMenu(Scanner scan) {
         int svar = 1;
         while(svar != 0) {
